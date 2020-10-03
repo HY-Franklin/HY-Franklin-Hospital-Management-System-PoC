@@ -1,7 +1,7 @@
 ﻿# Hospital Management System PoC
 
 ## 1. Abstract
-Nowadays, everything goes to more and more informatization and modernization, and the computer can extremely increase efficiency of  our workload, and also effect all hospitals, so  **Hospital management systems** comes out, it provide friendly User Interface, so it can easily be operated by anyone. This system allows Hospital employee  to optimize and digitize all the processes within the institution, which will help to improve customer service, reduce process costs, streamline the search of medical records, bills, patients, doctors, etc.; thus, having a database of each module implemented.
+Nowadays, everything goes to more and more informatization and modernization, and the computer can extremely increase efficiency of  our workload, and also effect all hospitals, so  **Hospital management systems** come out, it provides friendly User Interface, so it can easily be operated by anyone. This system allows Hospital employee  to optimize and digitize all the processes within the institution, which will help to improve customer service, reduce process costs, streamline the search of medical records, bills, patients, doctors, etc.; thus, having a database of each module implemented.
 
 
 
