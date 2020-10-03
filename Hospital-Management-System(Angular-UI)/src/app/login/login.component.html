@@ -1,0 +1,17 @@
+
+<div class="container">
+  <form #userForm='ngForm'>
+    <label>Username:<br/>
+      <input type="text" [(ngModel)]="username" name="username">
+    </label><br/>
+    <label>Password:<br/>
+    <input type="password" [(ngModel)]="password" name="password">
+  </label><br/>
+    <button (click)="Autofill()">Autofill</button>
+    <button (click)="authenticateService.authenticate(userForm.value.username,userForm.value.password)" style="margin-top: 10px;margin-bottom: 10px">Submit</button>
+
+  </form>
+</div>
+
+
+<button routerLink="/welcome">Welcome</button>

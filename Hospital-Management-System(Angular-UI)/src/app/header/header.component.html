@@ -1,0 +1,9 @@
+
+<nav class="navbar navbar-light container" style="background-color: #e3f2fd;">
+  <!-- Navbar content -->
+
+    <a class="navbar-brand" routerLink="/login">Login</a>
+    <a class="navbar-brand" routerLink="/login" (click)="authenticateService.goLogout()" style="margin-left: 80%">Logout</a>
+    <p>{{authenticateService.isUserLoginIn()}}</p>
+
+</nav>

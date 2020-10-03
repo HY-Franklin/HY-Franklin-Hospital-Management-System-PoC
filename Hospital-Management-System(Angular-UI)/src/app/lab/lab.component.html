@@ -1,0 +1,7 @@
+<p>lab works!</p>
+<button (click)="getLabs()">Get all Labs</button>
+<ul>
+  <li *ngFor="let item of labReports; let i = index">
+    {{i+1}} {{item.diagnosis}}
+  </li>
+</ul>

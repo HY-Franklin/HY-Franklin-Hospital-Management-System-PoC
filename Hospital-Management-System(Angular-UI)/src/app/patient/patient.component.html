@@ -1,0 +1,12 @@
+<p>patient works!</p>
+<button (click)="getPatients()">Get all Patients</button>
+<ul>
+  <li *ngFor="let item of patients; let i = index">
+    {{i+1}} {{item.name+' '+item.gender+' '+' '+item.type+' '+item.phone+' '+item.doctors_id+' '+item.lab_reports_id}}
+
+    <a href="{{item._links.doctors.href}}">doctors_id</a>
+    <a href="{{item._links.labReports.href}}">lab_reports_id</a>
+
+
+  </li>
+</ul>

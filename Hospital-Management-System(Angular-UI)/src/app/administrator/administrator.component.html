@@ -1,0 +1,178 @@
+<p>administrator works!</p>
+<div class="container" style="text-align: center">
+  <button (click)="getBills()">Get all billings</button>
+  <button (click)="getDoctors()">Get all Doctors</button>
+  <button (click)="getLabs()">Get all Labs</button>
+  <button (click)="getPatients()">Get all Patients</button>
+  <button (click)="getStaffs()">Get all Staffs</button>
+</div>
+<hr/>
+<button (click)="refresh()">refresh</button>
+<hr/>
+<!--<p>{{billings|json}}</p>-->
+<h3>Billings</h3>
+<!--add-->
+<button type="button" (click)="isAddOne=!isAddOne">AddOne</button>
+<form *ngIf="isAddOne" #userForm="ngForm">
+  <label>Amount:
+    <input type="text" name="amount" ngModel/>
+  </label>
+  <label>Date:
+    <input type="date" name="date" ngModel/>
+  </label>
+  <button (click)="addBillings(userForm.value.amount,userForm.value.date)">Submit</button>
+</form>
+
+<ul  *ngFor="let item of billings; let i = index" class="container">
+  <li>
+    {{i+1}} {{' '+item.amount+' '+item.date+' '}}
+
+    <a href="{{item._links.patients.href}}">patients_id</a>
+    <button (click)="isUpdate=!isUpdate">Update</button>
+    <form *ngIf="isUpdate" #userForm="ngForm">
+      <input type="text" name="amount" [(ngModel)]="item.amount"/>
+      <input type="date" name="date" [(ngModel)]="item.date"/>
+      <input type="url" name="url" [(ngModel)]="item._links.self.href" disabled="disabled"/>
+      <button (click)="updateBills(userForm.value.amount,userForm.value.date,item._links.self.href)">Submit</button>
+    </form>
+
+    <button (click)="deleteThis(item._links.self.href)">Delete</button>
+  </li>
+</ul>
+
+<h3>Doctors</h3>
+<!--add-->
+<button type="button" (click)="isAddOne=!isAddOne">AddOne</button>
+<form *ngIf="isAddOne" #userForm="ngForm">
+  <label>Name:
+    <input type="text" name="name" ngModel />
+  </label>
+  <label>Gender:
+    <input type="text" name="gender" ngModel />
+  </label>
+  <label>Phone:
+    <input type="text" name="phone" ngModel/>
+  </label>
+  <button (click)="addDoctor(userForm.value.name,userForm.value.gender,userForm.value.phone)">Submit</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let item of doctors; let i = index">
+    {{i+1}} {{item.name+' '+item.gender+' '+item.phone}}
+    <button (click)="isUpdate=!isUpdate">Update</button>
+    <form *ngIf="isUpdate" #userForm="ngForm">
+      <input type="text" name="name" [(ngModel)]="item.name"/>
+      <input type="text" name="gender" [(ngModel)]="item.gender"/>
+      <input type="text" name="phone" [(ngModel)]="item.phone"/>
+      <input type="url" name="url" [(ngModel)]="item._links.self.href" disabled="disabled"/>
+      <button (click)="updateDoctor(userForm.value.name,userForm.value.gender,userForm.value.phone,item._links.self.href)">Submit</button>
+    </form>
+    <button (click)="deleteThis(item._links.self.href)">Delete</button>
+  </li>
+</ul>
+
+<h3>labReports</h3>
+<!--add-->
+<button type="button" (click)="isAddOne=!isAddOne">AddOne</button>
+<form *ngIf="isAddOne" #userForm="ngForm">
+  <label>Diagnosis:
+    <input type="text" name="diagnosis" ngModel/>
+  </label>
+  <button (click)="addLabs(userForm.value.diagnosis)">Submit</button>
+</form>
+
+
+
+<ul>
+  <li *ngFor="let item of labReports; let i = index">
+    {{i+1}} {{item.diagnosis}}
+    <button (click)="isUpdate=!isUpdate">Update</button>
+    <form *ngIf="isUpdate" #userForm="ngForm">
+      <input type="text" name="diagnosis" [(ngModel)]="item.diagnosis"/>
+      <input type="url" name="url" [(ngModel)]="item._links.self.href" disabled="disabled"/>
+      <button (click)="updateLabs(userForm.value.diagnosis,item._links.self.href)">Submit</button>
+    </form>
+    <button (click)="deleteThis(item._links.self.href)">Delete</button>
+  </li>
+</ul>
+
+
+<h3>Patients</h3>
+<!--add-->
+<button type="button" (click)="isAddOne=!isAddOne">AddOne</button>
+<form *ngIf="isAddOne" #userForm="ngForm">
+  <label>Name:
+    <input type="text" name="name" ngModel/>
+  </label>
+  <label>Gender:
+    <input type="text" name="gender" ngModel/>
+  </label>
+  <label>Type:
+    <input type="text" name="type" ngModel/>
+  </label>
+  <label>Phone:
+    <input type="text" name="phone" ngModel/>
+  </label>
+  <label>Doctors_id:
+    <input type="text" name="doctors_id" ngModel/>
+  </label>
+  <label>Lab_reports_id:
+    <input type="text" name="lab_reports_id" ngModel/>
+  </label>
+  <button (click)="addPatient(userForm.value.name,userForm.value.gender,userForm.value.type,userForm.value.phone,userForm.value.doctors_id,userForm.value.lab_reports_id)">Submit</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let item of patients; let i = index">
+    {{i+1}} {{item.name+' '+item.gender+' '+' '+item.type+' '+item.phone+' '+item.doctors_id+' '+item.lab_reports_id}}
+
+    <a href="{{item._links.doctors.href}}">doctors_id</a>
+    <a href="{{item._links.labReports.href}}">lab_reports_id</a>
+    <button (click)="isUpdate=!isUpdate">Update</button>
+    <form *ngIf="isUpdate" #userForm="ngForm">
+      <input type="text" name="name" [(ngModel)]="item.name"/>
+      <input type="text" name="gender" [(ngModel)]="item.gender"/>
+      <input type="text" name="type" [(ngModel)]="item.type"/>
+      <input type="text" name="phone" [(ngModel)]="item.phone"/>
+      <input type="text" name="doctors_id" [(ngModel)]="item.doctors_id"/>
+      <input type="text" name="lab_reports_id" [(ngModel)]="item.lab_reports_id"/>
+      <input type="url" name="url" [(ngModel)]="item._links.self.href" disabled="disabled"/>
+      <button (click)="updatePatient(userForm.value.name,userForm.value.gender,userForm.value.type,userForm.value.phone,userForm.value.doctors_id,userForm.value.lab_reports_id)">Submit</button>
+    </form>
+    <button (click)="deleteThis(item._links.self.href)">Delete</button>
+  </li>
+</ul>
+
+<h3>Staffs</h3>
+<!--add-->
+<button type="button" (click)="isAddOne=!isAddOne">AddOne</button>
+<form *ngIf="isAddOne" #userForm="ngForm">
+  <label>Name:
+    <input type="text" name="name"  ngModel/>
+  </label>
+  <label>Gender:
+    <input type="text" name="gender" ngModel/>
+  </label>
+  <label>Phone:
+    <input type="text" name="phone" ngModel/>
+  </label>
+  <button (click)="addStaffs(userForm.value.name,userForm.value.gender,userForm.value.phone)">Submit</button>
+</form>
+
+<ul>
+  <li *ngFor="let item of staffs; let i = index">
+    {{i+1}} {{item.name+' '+item.phone+' '+item.gender+' '}}
+    <button (click)="isUpdate=!isUpdate">Update</button>
+    <form *ngIf="isUpdate" #userForm="ngForm">
+      <input type="text" name="name" [(ngModel)]="item.name"/>
+      <input type="text" name="gender" [(ngModel)]="item.gender"/>
+      <input type="text" name="phone" [(ngModel)]="item.phone"/>
+      <input type="url" name="url" [(ngModel)]="item._links.self.href" disabled="disabled"/>
+      <button (click)="updateStaffs(userForm.value.name,userForm.value.gender,userForm.value.phone,item._links.self.href)">Submit</button>
+    </form>
+    <button (click)="deleteThis(item._links.self.href)">Delete</button>
+  </li>
+</ul>
+

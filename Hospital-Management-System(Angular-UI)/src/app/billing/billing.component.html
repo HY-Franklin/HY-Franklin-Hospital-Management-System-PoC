@@ -1,0 +1,9 @@
+<p>billing works!</p>
+<button (click)="getBills()">Get all billings</button>
+<ul>
+  <li *ngFor="let item of billings; let i = index">
+    {{i+1}} {{' '+item.amount+' '+item.date+' '}}
+    <a href="{{item._links.patients.href}}">patients_id</a>
+
+  </li>
+</ul>
