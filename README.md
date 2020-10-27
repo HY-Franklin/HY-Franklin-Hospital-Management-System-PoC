@@ -59,22 +59,28 @@ This Hospital Management System is to computerize the maintenance of the hospita
 * Data Layer:
 	* MySQL Database 
 	* Tables
+* Devops
+	* Jenkins
+	* Maven
+
+* Deployment 
+	* AWS EC2 Linx AMI Nginx
+	* AWS Elastic Beanstalk
+	* AWS RDS database
+	* AWS Rout 53
+	* AWS Elatic Load Balancing
+	* AWS CodePipline 
+	
 
 ### 3.3 Coding / Implementation 
 	See Two Projects Folder in the Top
 
 
-### 3.4 Unit Testing
+### 3.4 Unit Testing & Integration Testing
 * Tools:
 	* Junit 5
 	* Mockito 3
-
-
-### 3.5 Integration Testing
-* Tools:
-	* Junit 5
-	* Mockito 3
-
+	* Spring Boot Test
 
 ## 4. Viable project
 See Angular folder and Spring Boot Folder in the Top
