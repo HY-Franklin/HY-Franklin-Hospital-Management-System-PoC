@@ -8,7 +8,7 @@ Nowadays, everything goes to more and more informatization and modernization, an
 
 ## 2. Solutions
 
-This Hospital Management System is to computerize the maintenance of the hospital with micro-services architecture. This system integrates all the information regarding patients, doctors, billing, staff, Lab reports and hospital administrative details into one system. The goal of this system is to help in making the whole functioning paperless, and unify and simplify the work of healthcare professionals as well as their interactions with patients, also billing system service enables the patient and hospital staff to make things faster and can get information quickly. 
+This Hospital Management System is to computerize the maintenance of the hospital with micro-services architecture. This system integrates all the information regarding patients, doctors, billing, staff, Lab reports and hospital administrative details into one system. The goal of this system is to help in making the whole functioning paperless, and unify and simplify the work of healthcare professionals as well as their interactions with patients, also billing system service enables the patient and hospital staff to make things faster and can get information quickly. Because it was formed with Micro-services, it's easy to maintenance in the future. For deployment, because nowadays AWS is the #1 cloud service provider that provides a friendly UX and many useful tools for enterprise application, deploying this whole Application on AWS.
 
 ## 3.Prototype Solutions
 
