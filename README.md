@@ -64,7 +64,7 @@ This Hospital Management System is to computerize the maintenance of the hospita
 	* Maven
 
 * Deployment 
-	* AWS EC2 Linx AMI Nginx
+	* AWS EC2 Linux AMI Nginx
 	* AWS Elastic Beanstalk
 	* AWS RDS database
 	* AWS Rout 53
